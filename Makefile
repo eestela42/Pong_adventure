@@ -8,6 +8,7 @@ SRC = main.cpp          \
         menuClass.cpp              \
         ballClass.cpp                \
         gameClass.cpp		\
+		mapClass.cpp		\
 		paddleClass.cpp		\
 
 SRCS            = $(addprefix srcs/, $(SRC))

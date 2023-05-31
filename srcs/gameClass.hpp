@@ -4,6 +4,7 @@
 #include "ballClass.hpp"
 #include "menuClass.hpp"
 #include "paddleClass.hpp"
+#include "mapClass.hpp"
 #include <raylib.h>
 
 class ballClass;
@@ -19,14 +20,16 @@ public:
     Texture2D background;
     menuClass *menu;
 
-
     int screenWidth;
     int screenHeight;
+    mapClass map;
 
-    gameClass();
+    float cam_y;
+
+    gameClass(std::string filename);
     ~gameClass();
-    void render();
-    void loop();
+    void gameloop();
+    void menuloop();
 };
 
 

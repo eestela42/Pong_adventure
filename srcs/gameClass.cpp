@@ -1,6 +1,6 @@
 #include "gameClass.hpp"
 
-gameClass::gameClass(): screenWidth(1200), screenHeight(900)
+gameClass::gameClass(std::string filename): screenWidth(1200), screenHeight(900), map(filename), cam_y(0)
 {
 	menu = new menuClass();
     InitWindow(screenWidth, screenHeight, "BorderClone");
@@ -13,23 +13,19 @@ gameClass::~gameClass()
 {
 }
 
-void	gameClass::loop()
+void	gameClass::menuloop()
 {
     while (!WindowShouldClose())
     {
-        BeginDrawing();
-		ClearBackground(BLACK);
-		// DrawTexture(background, 0, 0, WHITE);
 		
 		if (!menu->render())
 			return ;
 		if (menu->render() == 1)
-			this->render();
-		EndDrawing();
+			this->gameloop();
     }
 }
 
-void	gameClass::render()
+void	gameClass::gameloop()
 {
 	ball = new ballClass(this, 0, screenWidth/2, screenHeight/2, 4, -9.5);
 	paddle = new paddleClass(this);
@@ -37,13 +33,15 @@ void	gameClass::render()
 	{
 		BeginDrawing();
 		ClearBackground(BLACK);
-		ball->move();
-		ball->render();
-		if (IsKeyDown(KEY_RIGHT))
-			paddle->move(paddle->speed);
-		if (IsKeyDown(KEY_LEFT))
-			paddle->move(-paddle->speed);
+		
+		cam_y -= 0.3;
+		ball->move(*this);
+		paddle->move();
+		
+		map.render(*this);
+		ball->render(*this);
 		paddle->render();
+		
 		EndDrawing();
 	}
 }

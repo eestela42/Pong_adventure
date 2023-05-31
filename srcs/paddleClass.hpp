@@ -21,7 +21,7 @@ public:
 	paddleClass(gameClass *game);
 	~paddleClass();
 	void render();
-	void move(float movement);
+	void move();
 };
 
 

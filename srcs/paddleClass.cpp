@@ -12,11 +12,15 @@ paddleClass::~paddleClass()
 
 void	paddleClass::render()
 {
-	DrawRectangle(x - width/2, y - height/2, width, height, RED);
+	DrawRectangle(x - width/2, y - height/2 - game->cam_y, width, height, RED);
 }
 
-void	paddleClass::move(float movement)
+void	paddleClass::move()
 {
+	float movement = IsKeyDown(KEY_RIGHT) - IsKeyDown(KEY_LEFT);
+	y = game->screenHeight - height*2 + game->cam_y;
+
+	movement *= speed;
 	if (x - width/2 - movement < 0 && movement < 0)
 		return ;
 	else if ( x + width/2 + movement > game->screenWidth && movement > 0)

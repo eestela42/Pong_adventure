@@ -25,6 +25,7 @@ int	menu_mouse_click()
 int	menuClass::render()
 {
 	Texture2D title = LoadTexture("sprites/Title.png");
+	
 	while (1)
 	{
 		BeginDrawing();
