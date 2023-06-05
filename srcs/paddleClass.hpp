@@ -13,7 +13,9 @@ class paddleClass
 public:
 	gameClass *game;
 	int 	width;
+	int coef_width;
 	int 	height;
+	float	block_y;
 
 	float 	speed;
 	float	x;

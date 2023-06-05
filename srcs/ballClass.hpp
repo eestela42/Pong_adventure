@@ -20,8 +20,8 @@ public:
     
     ballClass(gameClass *game, int id, float x, float y, float velo_x, float velo_y);
     ~ballClass();
-    void render(gameClass &game);
-    void move(gameClass &game);
+    void render();
+    bool move();
 };
 
 

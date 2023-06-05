@@ -1,10 +1,10 @@
 #include "gameClass.hpp"
 
-gameClass::gameClass(std::string filename): screenWidth(1200), screenHeight(900), map(filename), cam_y(0)
+gameClass::gameClass(std::string filename): screenWidth(1200), screenHeight(900), map(filename, this), cam_y(0)
 {
 	menu = new menuClass();
     InitWindow(screenWidth, screenHeight, "BorderClone");
-    SetTargetFPS(60);
+    SetTargetFPS(120);
     DrawRectangle(0, 0, screenWidth, screenHeight, BLACK);
     background = LoadTexture("sprites/background.png");
 }
@@ -21,27 +21,51 @@ void	gameClass::menuloop()
 		if (!menu->render())
 			return ;
 		if (menu->render() == 1)
-			this->gameloop();
+			break;
     }
+	this->gameloop();
+}
+
+void gameClass::update()
+{
+	tick++;
+	if (cam_y > - map.zero)
+		cam_y -= 0.02 + 0.1 * IsKeyDown(KEY_LEFT_SHIFT);
+
+	paddle->move();
+	std::list<std::list<ballClass>::iterator> to_delete;
+	for (auto it = balls.begin(); it != balls.end(); it++)
+		if (it->move())	{
+			to_delete.push_back(it);
+			if (balls.size() == 1)
+				return ;
+		}
+	for (auto it = to_delete.begin(); it != to_delete.end(); it++)
+		balls.erase(*it);
+	if (IsKeyPressed(KEY_SPACE))
+		balls.push_back(ballClass(this, 0, paddle->x, paddle->y, 0, 0.5));
 }
 
 void	gameClass::gameloop()
 {
-	ball = new ballClass(this, 0, screenWidth/2, screenHeight/2, 4, -9.5);
+	tick = 0;
+	for (int i = -3; i < 4; i++)
+		balls.push_back(ballClass(this, i, screenWidth/2, screenHeight/2, (float)i / 5, -0.5));
 	paddle = new paddleClass(this);
 	while (!WindowShouldClose())
 	{
+		for (int i = 0; i < 5; i++)
+			update();
+		
 		BeginDrawing();
 		ClearBackground(BLACK);
 		
-		cam_y -= 0.3;
-		ball->move(*this);
-		paddle->move();
-		
 		map.render(*this);
-		ball->render(*this);
+		for (auto &ball : balls)
+			ball.render();
 		paddle->render();
 		
 		EndDrawing();
 	}
+	delete paddle;
 }

@@ -1,9 +1,51 @@
 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+G                                              G
+G                                              G
+G                                              G
+G                                              G
+G1111111111#         111111        #11111111111G
+G11111111#        1111111111111       #11111111G
+G1111111#        111111111111111       #1111111G
+G11111#        111111GGGGGGG111111       #11111G
+G                                              G
+G                                              G
+G                       M                      G
+G                                              G
+G                                              G
+G                   M       M                  G
+G                                              G
+G                                              G
+G                       M                      G
+G                                              G
+G                                              G
+G11111#        111111GGGGGGG111111       #11111G
+G1111111#        111111111111111       #1111111G
+G11111111#        1111111111111       #11111111G
+G1111111111#         111111        #11111111111G
+G                                              G
+G                                              G
+G                                              G
+G                                              G
+G                                              G
+G                                              G
+G                                              G
+G                                              G
+G                                              G
+G                                              G
+G                                              G
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG11111111G
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG11111111G
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG11111111G
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG11111111G
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG11111111G
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG11111111G
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG11111111G
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG11111111G
 G1111111111111111111111111111111111111111111111G
 G1111111111111111111111111111111111111111111111G
-G                                            11G
-G    O                O        OOOOOOOOOOOOOO11G
-G                                            11G
+G                            GG11            11G
+G    O                O      GG11OOOOOOOOOOOO11G
+G                            GG11            11G
 G   1111111111111111111111111111111111111111111G
 G   1111111111111111111111111111111111111111111G
 G   11111GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
@@ -55,6 +97,10 @@ G O  O 11      GG      O   O   O   O   O       G
 G  OO  11      GG    O   O   O   O   O   O     G
 G O  O 11      GG      O   O   O   O   O       G
 G      11      GG                              G
+G11111111      GG111111111111111111111111111111G
+G11111111      GG111111111111111111111111111111G
+G11111111      GG111111111111111111111111111111G
+G11111111      GG11111#11111#1111111#11111#1111G
 G11111111      GG111111111111111111111111111111G
 G11111111      GG111111111111111111111111111111G
 GGGGGGGGGGGGGGGGG                              G
